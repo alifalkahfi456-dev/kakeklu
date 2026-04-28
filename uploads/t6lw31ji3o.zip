@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DARK STARS</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&display=swap');
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      min-height: 100vh;
+      padding: 20px 16px;
+    }
+
+    .header {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff;
+      color: #f0f0f0;
+    }
+
+    .divider {
+      height: 1px;
+      background: #222;
+      margin-bottom: 24px;
+    }
+
+    .hero-img {
+      width: 100%;
+      height: 200px;
+      background: #111;
+      border-radius: 20px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-image: url('https://placehold.co/600x400/1a1a1a/ffffff?text=Anime+Image');
+      background-size: cover;
+      background-position: center;
+    }
+
+    .title {
+      text-align: center;
+      font-size: 18px;
+      font-weight: 600;
+      text-shadow: 0 0 8px #ff00ff, 0 0 12px #ff00ff;
+      color: #f0f0f0;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      text-align: center;
+      font-size: 14px;
+      color: #aaa;
+      margin-bottom: 24px;
+      text-shadow: 0 0 6px #ff00ff;
+    }
+
+    .card {
+      border: 1.5px solid #fff;
+      border-radius: 16px;
+      padding: 20px 16px;
+    }
+
+    .label {
+      font-size: 12px;
+      font-weight: 600;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .input-group {
+      position: relative;
+      margin-bottom: 20px;
+    }
+
+    .input-group input {
+      width: 100%;
+      background: #000;
+      border: 1.5px solid #fff;
+      border-radius: 12px;
+      padding: 14px 14px 44px;
+      color: #fff;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      outline: none;
+    }
+
+    .input-group input::placeholder {
+      color: #666;
+    }
+
+    .input-group .icon {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 18px;
+    }
+
+    .select {
+      width: 100%;
+      background: #d9d9d9;
+      border: none;
+      border-radius: 12px;
+      padding: 14px;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      margin-bottom: 20px;
+      appearance: none;
+    }
+
+    .btn-send {
+      width: 100%;
+      background: #fff;
+      border: none;
+      border-radius: 12px;
+      padding: 16px;
+      color: #000;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+      font-weight: 600;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .btn-send:active {
+      transform: scale(0.98);
+      background: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">DARK STARS</div>
+  <div class="divider"></div>
+
+  <div class="hero-img"></div>
+
+  <h1 class="title">DARK STARS</h1>
+  <p class="subtitle">Developer @BalzyKing</p>
+
+  <div class="card">
+    <div class="label">TARGET NUMBER</div>
+    <div class="input-group">
+      <span class="icon"></span>
+      <input type="text" placeholder="e.g. +62xxxxxxxxxxx">
+    </div>
+
+    <div class="label">SELECT BUG</div>
+    <select class="select">
+      <option>Force Close</option>
+      <option>Delay Invisible</option>
+      <option>Blank Crash</option>
+    </select>
+
+    <button class="btn-send">SEND BUG</button>
+  </div>
+
+  <script>
+    document.querySelector('.btn-send').addEventListener('click', function() {
+      const number = document.querySelector('input').value;
+      const bug = document.querySelector('select').value;
+      
+      if(!number) {
+        alert('Isi target number dulu');
+        return;
+      }
+      alert(`Bug: ${bug}\nDikirim ke: ${number}`);
+    });
+  </script>
+</body>
+</html>
